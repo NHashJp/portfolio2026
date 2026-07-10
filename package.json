@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-contact-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio site with a contact form backend.",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check assets/js/contact-form.js && node --check assets/js/main.js && node --check assets/js/portfolio-data.js && node --check assets/js/site-menu.js && node --check assets/js/portfolio-render.js && node --check assets/js/project-page.js"
+  }
+}

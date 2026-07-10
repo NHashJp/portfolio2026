@@ -10,6 +10,7 @@
     $header = $("#header"),
     $footer = $("#footer"),
     $main = $("#main"),
+    $siteMenu = $("#site-menu"),
     settings = {
       // Parallax background effect?
       parallax: true,
@@ -54,6 +55,20 @@
     $footer.appendTo($header);
   });
 
+  // Site menu.
+  if ($siteMenu.length > 0) {
+    $siteMenu.panel({
+      delay: 150,
+      hideOnClick: true,
+      hideOnEscape: true,
+      hideOnSwipe: true,
+      resetScroll: true,
+      side: "left",
+      target: $body,
+      visibleClass: "menu-visible",
+    });
+  }
+
   // Header.
 
   // Parallax background.
@@ -89,20 +104,26 @@
 
   // Lightbox gallery.
   $window.on("load", function () {
-    $("#two").poptrox({
-      caption: function ($a) {
-        return $a.next("h3").text();
-      },
-      overlayColor: "#2c2c2c",
-      overlayOpacity: 0.85,
-      popupCloserText: "",
-      popupLoaderText: "",
-      selector: ".work-item a.image",
-      usePopupCaption: true,
-      usePopupDefaultStyling: false,
-      usePopupEasyClose: false,
-      usePopupNav: true,
-      windowMargin: breakpoints.active("<=small") ? 0 : 50,
+    $("#two, #portfolio-listing").each(function () {
+      var $section = $(this);
+
+      if ($section.length === 0) return;
+
+      $section.poptrox({
+        caption: function ($a) {
+          return $a.next("h3").html();
+        },
+        overlayColor: "#2c2c2c",
+        overlayOpacity: 0.85,
+        popupCloserText: "",
+        popupLoaderText: "",
+        selector: ".work-item a.image",
+        usePopupCaption: true,
+        usePopupDefaultStyling: false,
+        usePopupEasyClose: false,
+        usePopupNav: true,
+        windowMargin: breakpoints.active("<=small") ? 0 : 50,
+      });
     });
   });
 })(jQuery);

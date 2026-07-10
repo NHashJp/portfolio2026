@@ -20,6 +20,19 @@ aj@lkn.io | @ajlkn
 PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
 
 
+Contact form backend:
+
+	This repo now includes a Node backend in `server.js` and a frontend handler in
+	`assets/js/contact-form.js`.
+
+	Setup:
+	1. Copy `.env.example` values into your shell environment.
+	2. Set `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL`.
+	3. Run `npm start`.
+
+	The contact form sends the message to `CONTACT_TO_EMAIL`.
+
+
 Credits:
 
 	Demo Images:
