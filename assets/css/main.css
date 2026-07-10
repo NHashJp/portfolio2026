@@ -1,6 +1,35 @@
-@import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
 
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  src: url("../webfonts/fa-solid-900.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  src: url("../webfonts/fa-solid-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  src: url("../webfonts/fa-brands-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fa-linkedin:before {
+  content: "\f0e1";
+}
+
+.fa-github:before {
+  content: "\f09b";
+}
+.fa-envelope:before {
+  content: "\f0e0";
+}
 /*
 	Strata by HTML5 UP
 	html5up.net | @ajlkn
@@ -194,7 +223,7 @@ input,
 select,
 textarea {
   color: #a2a2a2;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16pt;
   font-weight: 400;
   line-height: 1.75em;
