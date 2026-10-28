@@ -3,9 +3,9 @@ window.portfolioProjects = [
     slug: "matusri-barcelona",
     title: "Matusri Barcelona",
     summary:
-      "A full stack development project for official website for annaual Japanese festival in Barcelona, Spain, Matsuri and run the event as an organizer for 4 years. ",
+      "A full stack development project for official website for annual Japanese festival in Barcelona, Spain, Matsuri and run the event as an organizer for 4 years. ",
     description:
-      "Developed the website for the year 2024 and 2025 editions, with more than 5000 traffic. Also invovled in the opeartion of the event with more than 30,000 visitors as a coordinator of volunteers.",
+      "Developed the website for the year 2024 and 2025 editions, with more than 5000 traffic. Also involved in the operation of the event with more than 30,000 visitors as a coordinator of volunteers.",
     tags: ["javascript", "web"],
     thumbImage: "images/fulls/matsuri-barcelona.png",
     fullImage: "images/fulls/matsuri-barcelona.png",
@@ -121,3 +121,14 @@ window.portfolioProjects = [
     fullImage: "images/fulls/05.jpg",
   },
 ];
+
+window.portfolioHelpers = {
+  // Prefix for site-root-relative URLs, depending on whether we are in /projects/.
+  basePath: window.location.pathname.indexOf("/projects/") !== -1 ? "../" : "",
+
+  tagLabel: function (tag) {
+    if (tag === "javascript") return "JavaScript";
+    if (tag === "c++") return "C++";
+    return tag.charAt(0).toUpperCase() + tag.slice(1);
+  },
+};

@@ -184,26 +184,32 @@ async function handleContact(request, response) {
   });
 }
 
+// Only these top-level entries are served; keeps .env, server.js, .git etc. private.
+const publicEntries = new Set(["assets", "images", "projects"]);
+const publicFileExtension = ".html";
+
 function resolveStaticPath(urlPath) {
   const requestedPath = urlPath === "/" ? "/index.html" : urlPath;
-  const normalizedPath = path
-    .normalize(requestedPath)
-    .replace(/^(\.\.[/\\])+/, "");
-  const filePath = path.join(rootDir, normalizedPath);
+  const filePath = path.join(rootDir, path.normalize(requestedPath));
 
-  if (!filePath.startsWith(rootDir)) {
+  if (!filePath.startsWith(rootDir + path.sep)) {
     return "";
   }
 
-  return filePath;
+  const [topLevel] = path.relative(rootDir, filePath).split(path.sep);
+  const isPublicPage =
+    path.dirname(filePath) === rootDir &&
+    path.extname(filePath) === publicFileExtension;
+
+  return publicEntries.has(topLevel) || isPublicPage ? filePath : "";
 }
 
 function serveStatic(request, response) {
   const filePath = resolveStaticPath(new URL(request.url, `http://${request.headers.host}`).pathname);
 
   if (!filePath) {
-    response.writeHead(403);
-    response.end("Forbidden");
+    response.writeHead(404);
+    response.end("Not found");
     return;
   }
 

@@ -4,8 +4,7 @@
 
   if (!menu) return;
 
-  var isProjectPage = window.location.pathname.indexOf("/projects/") !== -1;
-  var basePath = isProjectPage ? "../" : "";
+  var basePath = window.portfolioHelpers.basePath;
 
   var projectLinks = projects
     .map(function (project) {

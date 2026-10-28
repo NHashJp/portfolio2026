@@ -16,8 +16,8 @@
   var description = document.getElementById("project-description");
   var tags = document.getElementById("project-tags");
   var pageTitle = document.getElementById("project-page-title");
-  var isProjectPage = window.location.pathname.indexOf("/projects/") !== -1;
-  var basePath = isProjectPage ? "../" : "";
+  var basePath = window.portfolioHelpers.basePath;
+  var tagLabel = window.portfolioHelpers.tagLabel;
 
   document.title = project.title + " | Portfolio 2026";
 
@@ -50,8 +50,7 @@
   if (tags) {
     tags.innerHTML = project.tags
       .map(function (tag) {
-        var label = tag === "javascript" ? "JavaScript" : tag === "c++" ? "C++" : tag.charAt(0).toUpperCase() + tag.slice(1);
-        return '<li class="project-tag">' + label + "</li>";
+        return '<li class="project-tag">' + tagLabel(tag) + "</li>";
       })
       .join("");
   }
