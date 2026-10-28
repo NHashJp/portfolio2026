@@ -13,13 +13,14 @@
   var preferredTagOrder = [
     "python",
     "java",
-    "c++",
     "javascript",
+    "typescript",
     "web",
-    "sensors",
+    "mobile",
+    "ai-ml",
     "robotics",
-    "game-dev",
-    "simulation",
+    "hardware",
+    "automation",
   ];
 
   function uniqueTags() {
