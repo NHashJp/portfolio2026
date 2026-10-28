@@ -6,20 +6,21 @@
 
   if (!grid) return;
 
-  var isProjectPage = window.location.pathname.indexOf("/projects/") !== -1;
-  var basePath = isProjectPage ? "../" : "";
+  var basePath = window.portfolioHelpers.basePath;
+  var tagLabel = window.portfolioHelpers.tagLabel;
   var pageMode = document.body.getAttribute("data-portfolio-view") || "all";
   var activeTag = "all";
   var preferredTagOrder = [
     "python",
     "java",
-    "c++",
     "javascript",
+    "typescript",
     "web",
-    "sensors",
+    "mobile",
+    "ai-ml",
     "robotics",
-    "game-dev",
-    "simulation",
+    "hardware",
+    "automation",
   ];
 
   function uniqueTags() {
@@ -34,12 +35,6 @@
     return preferredTagOrder.filter(function (tag) {
       return seen[tag];
     });
-  }
-
-  function tagLabel(tag) {
-    if (tag === "javascript") return "JavaScript";
-    if (tag === "c++") return "C++";
-    return tag.charAt(0).toUpperCase() + tag.slice(1);
   }
 
   function visibleProjects() {

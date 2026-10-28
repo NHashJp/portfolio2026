@@ -69,8 +69,6 @@
     });
   }
 
-  // Header.
-
   // Parallax background.
 
   // Disable parallax on IE (smooth scrolling is jerky), and on mobile pla (= better performance).
@@ -99,8 +97,6 @@
       $window.triggerHandler("scroll");
     });
   }
-
-  // Main Sections: Two.
 
   // Lightbox gallery.
   $window.on("load", function () {

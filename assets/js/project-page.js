@@ -15,9 +15,12 @@
   var summary = document.getElementById("project-summary");
   var description = document.getElementById("project-description");
   var tags = document.getElementById("project-tags");
+  var subtitle = document.getElementById("project-subtitle");
+  var sections = document.getElementById("project-sections");
+  var links = document.getElementById("project-links");
   var pageTitle = document.getElementById("project-page-title");
-  var isProjectPage = window.location.pathname.indexOf("/projects/") !== -1;
-  var basePath = isProjectPage ? "../" : "";
+  var basePath = window.portfolioHelpers.basePath;
+  var tagLabel = window.portfolioHelpers.tagLabel;
 
   document.title = project.title + " | Portfolio 2026";
 
@@ -50,9 +53,58 @@
   if (tags) {
     tags.innerHTML = project.tags
       .map(function (tag) {
-        var label = tag === "javascript" ? "JavaScript" : tag === "c++" ? "C++" : tag.charAt(0).toUpperCase() + tag.slice(1);
-        return '<li class="project-tag">' + label + "</li>";
+        return '<li class="project-tag">' + tagLabel(tag) + "</li>";
       })
       .join("");
+  }
+
+  function el(tagName, text, className) {
+    var node = document.createElement(tagName);
+    if (text) node.textContent = text;
+    if (className) node.className = className;
+    return node;
+  }
+
+  function linkList(items, className) {
+    var list = el("ul", "", className);
+
+    items.forEach(function (item) {
+      var li = el("li");
+      var a = el("a", item.label, className === "actions" ? "button" : "");
+      a.href = item.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+
+    return list;
+  }
+
+  if (subtitle) {
+    subtitle.textContent = project.subtitle || "";
+  }
+
+  if (sections) {
+    (project.sections || []).forEach(function (section) {
+      var wrapper = el("div", "", "project-section");
+      var list = el("ul");
+
+      wrapper.appendChild(el("h3", section.heading));
+      section.items.forEach(function (text) {
+        list.appendChild(el("li", text));
+      });
+      wrapper.appendChild(list);
+
+      if (section.links) {
+        wrapper.appendChild(linkList(section.links, "project-links"));
+      }
+
+      sections.appendChild(wrapper);
+    });
+  }
+
+  if (links && project.links && project.links.length) {
+    links.appendChild(linkList(project.links, "actions"));
   }
 })();

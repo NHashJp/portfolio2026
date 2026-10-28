@@ -3665,3 +3665,21 @@ body.is-touch .poptrox-popup .closer {
     padding-left: 0;
   }
 }
+
+/* Project detail pages */
+
+.project-section {
+  margin-top: 2em;
+}
+
+.project-section ul {
+  margin-bottom: 0.75em;
+}
+
+ul.project-links {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
