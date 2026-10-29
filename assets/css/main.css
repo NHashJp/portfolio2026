@@ -3442,6 +3442,24 @@ body.is-touch .poptrox-popup .closer {
     width: min(30rem, 100%);
   }
 
+  .site-menu-list > li.has-dropdown {
+    flex-basis: 100%;
+  }
+
+  .site-submenu {
+    display: none;
+    margin-top: 0.75em;
+    min-width: 0;
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+
+  .site-menu-list > li.has-dropdown:hover .site-submenu,
+  .site-menu-list > li.has-dropdown:focus-within .site-submenu {
+    display: block;
+  }
+
   /* Basic */
 
   h1 br,
