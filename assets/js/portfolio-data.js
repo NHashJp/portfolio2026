@@ -47,8 +47,8 @@ window.portfolioProjects = [
       "mobile",
       "ai-ml"
     ],
-    "thumbImage": "images/thumbs/02.jpg",
-    "fullImage": "images/fulls/02.jpg",
+    "thumbImage": "images/fulls/team-nap.png.jpg",
+    "fullImage": "images/fulls/team-nap.png.jpg",
     "links": [
       {
         "label": "GitHub",
