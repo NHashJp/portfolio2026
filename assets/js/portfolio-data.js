@@ -47,8 +47,8 @@ window.portfolioProjects = [
       "mobile",
       "ai-ml"
     ],
-    "thumbImage": "images/fulls/team-nap.png.jpg",
-    "fullImage": "images/fulls/team-nap.png.jpg",
+    "thumbImage": "images/fulls/team-nap.png",
+    "fullImage": "images/fulls/team-nap.png",
     "links": [
       {
         "label": "GitHub",
@@ -146,8 +146,8 @@ window.portfolioProjects = [
       "java",
       "robotics"
     ],
-    "thumbImage": "images/thumbs/04.jpg",
-    "fullImage": "images/fulls/04.jpg",
+    "thumbImage": "/fulls/thunderkites.jpg",
+    "fullImage": "/fulls/thunderkites.jpg",
     "links": [],
     "sections": [
       {
