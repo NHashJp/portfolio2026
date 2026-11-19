@@ -3701,3 +3701,97 @@ ul.project-links {
   flex-wrap: wrap;
   gap: 1em;
 }
+
+/* Currently Working On */
+
+.current-item {
+  margin: 0 0 2em 0;
+}
+
+.current-item h3 {
+  font-size: 1em;
+  margin: 0.5em 0 0.25em 0;
+}
+
+.current-item p {
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+.current-item .current-org {
+  color: #999999;
+}
+
+.current-status {
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.current-status::before {
+  background: #999999;
+  border-radius: 50%;
+  content: "";
+  display: inline-block;
+  height: 0.6em;
+  margin-right: 0.6em;
+  width: 0.6em;
+}
+
+.current-status.is-active::before {
+  background: #3fa34d;
+}
+
+/* CV / Activities */
+
+.cv-list {
+  border-left: solid 2px #e5e5e5;
+  list-style: none;
+  margin: 0 0 2em 0.5em;
+  padding: 0;
+}
+
+.cv-entry {
+  margin: 0 0 2em 0;
+  padding: 0 0 0 1.5em;
+  position: relative;
+}
+
+.cv-entry::before {
+  background: #1f1815;
+  border-radius: 50%;
+  content: "";
+  height: 0.7em;
+  left: -0.45em;
+  position: absolute;
+  top: 0.35em;
+  width: 0.7em;
+}
+
+.cv-entry h3 {
+  font-size: 1em;
+  margin: 0 0 0.25em 0;
+}
+
+.cv-entry p {
+  font-size: 0.8em;
+  margin: 0;
+}
+
+.cv-dates {
+  color: #999999;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.cv-org {
+  margin-bottom: 0.5em !important;
+}
+
+.cv-entry ul {
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: 0 0 0.5em 0;
+}
