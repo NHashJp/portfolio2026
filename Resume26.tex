@@ -1,0 +1,444 @@
+\documentclass[a4paper,10pt]{article}
+
+% PACKAGES
+\usepackage{latexsym}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{array}
+
+% PAGE CONFIGURATION
+\usepackage[
+    a4paper,
+    left=1.cm,
+    right=1.cm,
+    top=1cm,
+    bottom=1cm
+]{geometry}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+
+\setlength{\tabcolsep}{0pt}
+\setlength{\parindent}{0pt}
+
+% SECTION FORMATTING
+\titleformat{\section}
+    {\large\bfseries\raggedright}
+    {}{0em}{}
+    [\color{black}\titlerule]
+
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+
+% CUSTOM COMMANDS
+
+% Standard bullet point with bold title
+
+\newcommand{\resumeItem}[2]{
+    \item\small{
+        \textbf{#1}: #2
+    }
+}
+
+% Standard bullet point without title
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+    \item\small{#1}
+}
+
+% Education and organisation heading
+% No bullet point
+
+\newcommand{\resumeSubheading}[4]{
+    \item[]
+    \begin{tabularx}{\linewidth}
+        {@{}>{\raggedright\arraybackslash}Xr@{}}
+        \textbf{#1} & #2 \\
+        \textit{#3} & \textit{#4} \\
+    \end{tabularx}
+    \vspace{-3pt}
+}
+
+% Work experience heading
+% Organisation and role on the same line
+% No bullet point
+
+\newcommand{\resumeWorkHeading}[3]{
+    \item[]
+    \begin{tabularx}{\linewidth}
+        {@{}>{\raggedright\arraybackslash}Xr@{}}
+        \textbf{#1} $|$ \textit{\small #2}
+        & \small #3 \\
+    \end{tabularx}
+    \vspace{-3pt}
+}
+
+% Skills, projects and achievement entries
+% Explicit bullet point
+
+\newcommand{\resumeSubItem}[2]{
+    \item\small{
+        \textbf{#1}: #2
+    }
+}
+
+% Main heading list without bullet points
+
+\newcommand{\resumeSubHeadingListStart}{
+    \begin{itemize}[
+        leftmargin=0pt,
+        label={},
+        itemsep=3pt,
+        topsep=2pt,
+        parsep=0pt,
+        partopsep=0pt
+    ]
+}
+
+\newcommand{\resumeSubHeadingListEnd}{
+    \end{itemize}
+}
+
+% Standard list for skills, projects and awards
+
+\newcommand{\resumeBulletListStart}{
+    \begin{itemize}[
+        leftmargin=12pt,
+        label=\textbullet,
+        itemsep=2pt,
+        topsep=2pt,
+        parsep=0pt,
+        partopsep=0pt
+    ]
+}
+
+\newcommand{\resumeBulletListEnd}{
+    \end{itemize}
+}
+
+% Nested bullet points for responsibilities
+
+\newcommand{\resumeItemListStart}{
+    \begin{itemize}[
+        leftmargin=15pt,
+        label=\textbullet,
+        itemsep=1pt,
+        topsep=0pt,
+        parsep=0pt,
+        partopsep=0pt
+    ]
+}
+% Universal experience heading
+% Arguments: Organisation, Role, Date, Location
+
+\newcommand{\resumeExperienceHeading}[4]{%
+    \item[]%
+    \noindent
+    \textbf{#1} $|$ \textit{\small #2}
+    \hfill
+    {\small #3}%
+    \if\relax\detokenize{#4}\relax
+    \else
+        {\small\enspace(#4)}%
+    \fi
+    \par\nobreak
+}
+
+% Compact bullet list immediately below heading
+
+\newcommand{\resumeItemListStart}{%
+    \begin{itemize}[
+        leftmargin=12pt,
+        label=\textbullet,
+        itemsep=1pt,
+        topsep=0pt,
+        parsep=0pt,
+        partopsep=0pt
+    ]
+}
+
+\newcommand{\resumeItemListEnd}{%
+    \end{itemize}
+}
+
+% Optional aligned skill command
+
+\newcommand{\resumeSkill}[2]{
+    \textbf{#1} & #2 \\[1pt]
+}
+
+%===========================================
+% CV STARTS HERE
+%===========================================
+
+\begin{document}
+
+%-------------------------------------------
+% HEADING
+%-------------------------------------------
+
+\begin{tabular*}{\textwidth}
+    {l@{\extracolsep{\fill}}r}
+
+    \textbf{{\LARGE Naoki Hashimoto}}
+    &
+    Email:
+    \href{mailto:nhnaokih25@gmail.com}
+        {nhnaokih25@gmail.com}
+    \\
+
+    \href{https://nhashjp.github.io/portfolio2026/index.html}
+        {Portfolio: https://nhashjp.github.io/portfolio2026/index.html}
+    &
+    Mobile:~~~+44-734-485-0664
+    \\
+
+    \href{https://github.com/NHashJp}
+        {Github: ~~github.com/NHashJp}
+    &
+    \href{https://www.linkedin.com/in/n-hash9999}
+        {LinkedIn: ~~linkedin.com/in/n-hash9999}
+    \\
+
+\end{tabular*}
+
+%-------------------------------------------
+% EDUCATION
+%-------------------------------------------
+
+\section{Education}
+
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+        {Imperial College London
+        {\footnotesize\normalfont
+        (Faculty of Engineering, Department of Aeronautics)}}
+        {London, UK}
+        {Master of Engineering, Aeronautical Engineering}
+        {Sep 2026 -- Jun 2030 (Expected)}
+
+    \par
+    {\small
+        \textbf{Course:}
+        Aerodynamics, Mechanics, Materials,
+        Computing and Numerical Methods, Mathematics
+    }
+    \par
+
+    \resumeSubheading
+        {Waseda University
+        {\footnotesize\normalfont
+        (School of Political Science and Economics, Department of Economics)}}
+        {Tokyo, Japan}
+        {Undergraduate Studies in Economics}
+        {Sep 2025 -- Jun 2026}
+
+\resumeSubHeadingListEnd
+
+% SKILLS SUMMARY
+\section{Skills Summary}
+
+\resumeBulletListStart
+
+    \resumeSubItem{CAD \& Design}
+        {CATIA, 3DEXPERIENCE, SolidWorks,
+        Autodesk Fusion, Blender}
+
+    \resumeSubItem{Simulation \& Analysis}
+        {MATLAB, Simulink, ANSYS, STAR-CCM+}
+
+    \resumeSubItem{Embedded Systems \& Control}
+        {STM32, ESP32, Arduino, PID Control,
+        Kalman Filtering, FOC, SPI, I2C, PWM, CAN}
+
+    \resumeSubItem{Programming Languages}
+        {Python, C, C++, JavaScript, TypeScript,
+        Java, SQL, Bash}
+
+    \resumeSubItem{Frameworks \& Libraries}
+        {ROS 2, NumPy, TensorFlow, React, React Native,
+        Next.js, Node.js, YOLO, Expo, Three.js}
+
+    \resumeSubItem{Development Tools}
+        {Git, GitHub, PlatformIO, CMake,
+        Linux, Figma, Vercel, Ollama}
+
+    \resumeSubItem{Databases \& DevOps}
+        {PostgreSQL, MySQL, SQLite, Prisma,
+        MongoDB, Docker, Caddy, CI/CD}
+
+\resumeBulletListEnd
+
+% WORK EXPERIENCE
+\section{Work Experience}
+\resumeSubHeadingListStart
+
+    \resumeExperienceHeading
+        {Allele Green Tech}
+        {Student Intern}
+        {Summer 2023 \& 2024}
+        {Alella, Spain}
+
+    \resumeItemListStart
+        \resumeItem{Intruder Detection System}
+            {Developed a robotic searchlight integrating Shelly
+            IoT devices via MQTT; implemented Node-RED control
+            workflows and designed the database schema.}
+
+        \resumeItem{Hydroelectric Monitoring}
+            {Developed a Python/Tkinter dashboard for monitoring
+            a hydroelectric generation system.}
+    \resumeItemListEnd
+
+    \resumeExperienceHeading
+        {Tutoring}
+        {STEM \& Economics Tutor}
+        {Oct 2025 -- Present}
+        {Remote}
+
+    \resumeItemListStart
+        \resumeItem{Teaching}
+            {Delivered \textbf{470+ hours} of individualised
+            STEM and economics instruction to \textbf{13 students}
+            across IBDP, IGCSE and MYP curricula.}
+
+        \resumeItem{Workflow Automation}
+            {Developed a Google Apps Script-based management
+            system integrating email, spreadsheets and automated
+            lesson agendas for session planning and progress tracking.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+% PROJECTS / ACTIVITIES
+\section{Projects / Activities}
+
+\resumeBulletListStart
+
+    \resumeSubItem{KartaSpace (3D Web Application)}
+        {Developing an interactive 3D messaging platform featuring
+        orbital animations, interactive message cubes, time-locked
+        messaging and dynamic celestial visualisations.
+        \textbf{Tech:} Three.js, React Three Fiber,
+        Next.js, TypeScript.}
+
+    \resumeSubItem{Harurobo: ROBOSTEP (Robotics, Computer Vision)}
+        {Responsible for perception and operator interface development
+        within Waseda University's robotics team. Applied LiDAR and
+        depth-camera point cloud processing for obstacle and platform
+        boundary detection. Trained a YOLOv5 model on
+        \textbf{1,000+ labelled images} with anomaly filtering
+        and developed a rosbridge-based GUI for real-time
+        hardware interaction.
+        \textbf{Tech:} ROS 2 (Jazzy), Python, YOLOv5,
+        Docker, Git.}
+
+    \resumeSubItem{Team NAP (Mobile Application, AI)}
+        {Led a \textbf{six-member development team} as Project
+        Manager and Full-Stack Developer, securing
+        \textbf{second place overall} and a company-sponsored
+        hackathon award. Developed a cross-platform rest optimisation
+        application integrating schedule-based recommendations,
+        real-time WebSocket communication, local LLM inference
+        and a containerised backend.
+        \textbf{Tech:} React Native, Expo, TypeScript,
+        Node.js, Express, PostgreSQL, Prisma, Docker, Ollama.}
+
+\resumeBulletListEnd
+
+%-------------------------------------------
+% HONOURS AND AWARDS
+%-------------------------------------------
+
+\section{Honours and Awards}
+
+\resumeBulletListStart
+
+    \resumeSubItem{Thunderkites Robotics (FIRST Tech Challenge)}
+        {Led a \textbf{20-student team} to
+        \textbf{first place} in Lyon (2023) and
+        \textbf{second place} in 2024.
+        Oversaw hardware-software integration, project management,
+        electronics design, Java-based autonomous and teleoperated
+        control, and TensorFlow object detection.}
+
+    \resumeSubItem{Benjamin Franklin Award (May 2025)}
+        {Awarded the school's highest graduation honour,
+        recognising outstanding overall performance.}
+
+    \resumeSubItem{Model United Nations}
+        {Two-time Best Delegate at Barcelona MUN (2022)
+        and BFISMUN (2023).}
+
+\resumeBulletListEnd
+
+% VOLUNTEER / COMMUNITY SERVICE
+\section{Volunteer / Community Service}
+\resumeSubHeadingListStart
+
+    \resumeExperienceHeading
+        {Matsuri Barcelona}
+        {Organising Team Member \& Web Developer}
+        {2022 -- Present}
+        {Barcelona, Spain}
+
+    \resumeItemListStart
+        \resumeItem{Website}
+            {Built the official website for the 2024 and 2025
+            editions (\textbf{5,000+ site visitors}).}
+
+        \resumeItem{Event}
+            {Coordinated \textbf{150 volunteers} for a festival
+            attracting \textbf{30,000+ visitors},
+            with a feedback rating of 4.85/5.00.}
+    \resumeItemListEnd
+
+    \resumeExperienceHeading
+        {High School Student Council}
+        {President \& Treasurer}
+        {2022 -- 2025}
+        {Barcelona, Spain}
+
+    \resumeItemListStart
+        \resumeItem{Finance}
+            {Established a financial tracking system supporting
+            post-pandemic recovery across middle and high school
+            student councils.}
+
+        \resumeItem{Leadership}
+            {Served as President (2024--25) and Treasurer (2022--24),
+            led student initiatives and delivered the Class of 2025
+            graduation speech.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+% LANGUAGES
+\section{Languages}
+
+{\small
+    \textbf{Japanese}: Native \quad
+    \textbf{English}: Native \quad
+    \textbf{Spanish}: Native \quad
+    \textbf{Catalan}: Conversational
+}
+
+\end{document}
